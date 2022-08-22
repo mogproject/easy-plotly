@@ -1,4 +1,13 @@
 PYTHON = python3
+PIP = pip3
+
+install:
+	$(PYTHON) setup.py install
+
+uninstall:
+	$(PIP) uninstall -y easy-plotly
+
+upgrade: uninstall install
 
 dev-install:
 	$(PYTHON) setup.py develop
@@ -6,10 +15,13 @@ dev-install:
 dev-uninstall:
 	$(PYTHON) setup.py develop -u
 
+version:
+	@$(PIP) freeze | grep easy-plotly || echo 'Not found: easy-plotly'
+
 lab:
 	jupyter-lab
 
 clean-notebook:
 	scripts/clear_notebook_output.sh
 
-.PHONY: dev-install dev-uninstall lab clean-notebook
+.PHONY: install uninstall dev-install dev-uninstall version lab clean-notebook
