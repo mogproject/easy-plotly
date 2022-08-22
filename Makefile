@@ -9,4 +9,7 @@ dev-uninstall:
 lab:
 	jupyter-lab
 
-.PHONY: dev-install dev-uninstall lab
+clean-notebook:
+	scripts/clear_notebook_output.sh
+
+.PHONY: dev-install dev-uninstall lab clean-notebook
