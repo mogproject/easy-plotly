@@ -34,18 +34,43 @@ class PlotlyFigure:
 
     def add_scatter(
         self,
-            x: List[float],
-            y: List[float],
-            name: str, text: List[str] = None,
-            template: Union[str, int, float] = None,
-            row: int = None,
-            col: int = None,
+        x: List[float],
+        y: List[float],
+        name: str,
+        text: List[str] = None,
+        template: Union[str, int, float] = None,
+        row: int = None,
+        col: int = None,
     ) -> go.Figure:
         subplots_params = {}
         if row is not None and col is not None:
             subplots_params = dict(row=row, col=col)
 
         self.fig.add_trace(go.Scatter(
+            x=x,
+            y=y,
+            name=name,
+            text=text,
+            **self.__get_trace_params(template)
+        ), **subplots_params)
+
+        return self.fig
+
+    def add_box(
+        self,
+        x: List[float],
+        y: List[float],
+        name: str,
+        text: List[str] = None,
+        template: Union[str, int, float] = None,
+        row: int = None,
+        col: int = None,
+    ) -> go.Figure:
+        subplots_params = {}
+        if row is not None and col is not None:
+            subplots_params = dict(row=row, col=col)
+
+        self.fig.add_trace(go.Box(
             x=x,
             y=y,
             name=name,
