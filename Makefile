@@ -16,7 +16,7 @@ dev-uninstall:
 	$(PYTHON) setup.py develop -u
 
 version:
-	@$(PIP) freeze | grep easy-plotly || echo 'Not found: easy-plotly'
+	@$(PIP) list | grep easy-plotly || echo 'Not found: easy-plotly'
 
 lab:
 	jupyter-lab
