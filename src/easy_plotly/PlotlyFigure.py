@@ -23,7 +23,7 @@ class PlotlyFigure:
 
         # overwrite titles
         if title is not None:
-            self.conf['layout']['title'] = title  # optional
+            self.conf['layout']['title']['text'] = title  # optional
         if x_title is not None:
             self.conf['layout']['xaxis']['title']['text'] = x_title
         if y_title is not None:
@@ -36,45 +36,64 @@ class PlotlyFigure:
         self,
         x: List[float],
         y: List[float],
-        name: str,
+        name: str = None,
         text: List[str] = None,
         template: Union[str, int, float] = None,
         row: int = None,
         col: int = None,
     ) -> go.Figure:
-        subplots_params = {}
-        if row is not None and col is not None:
-            subplots_params = dict(row=row, col=col)
+        return self.__add_trace(go.Scatter, template, row, col, x=x, y=y, name=name, text=text)
 
-        self.fig.add_trace(go.Scatter(
-            x=x,
-            y=y,
-            name=name,
-            text=text,
-            **self.__get_trace_params(template)
-        ), **subplots_params)
-
-        return self.fig
+    def add_bar(
+        self,
+        x: List[float],
+        y: List[float],
+        name: str = None,
+        text: List[str] = None,
+        template: Union[str, int, float] = None,
+        row: int = None,
+        col: int = None,
+    ) -> go.Figure:
+        return self.__add_trace(go.Bar, template, row, col, x=x, y=y, name=name, text=text)
 
     def add_box(
         self,
         x: List[float],
         y: List[float],
-        name: str,
+        name: str = None,
         text: List[str] = None,
         template: Union[str, int, float] = None,
         row: int = None,
         col: int = None,
     ) -> go.Figure:
+        return self.__add_trace(go.Box, template, row, col, x=x, y=y, name=name, text=text)
+
+    def add_violin(
+        self,
+        x: List[float],
+        y: List[float],
+        name: str = None,
+        text: List[str] = None,
+        template: Union[str, int, float] = None,
+        row: int = None,
+        col: int = None,
+    ) -> go.Figure:
+        return self.__add_trace(go.Violin, template, row, col, x=x, y=y, name=name, text=text)
+
+    def __add_trace(
+        self,
+        trace_obj: Any,
+        template: Union[str, int, float] = None,
+        row: int = None,
+        col: int = None,
+        **params
+    ) -> go.Figure:
         subplots_params = {}
         if row is not None and col is not None:
             subplots_params = dict(row=row, col=col)
 
-        self.fig.add_trace(go.Box(
-            x=x,
-            y=y,
-            name=name,
-            text=text,
+        self.fig.add_trace(trace_obj(
+            **params,
             **self.__get_trace_params(template)
         ), **subplots_params)
 
