@@ -8,8 +8,8 @@ layout:
       family: "Old Standard TT, serif"
       size: 32
       color: black
-  width: 480
-  height: 300
+  width: 200
+  height: 240
   margin:
     l: 0 # left
     r: 0 # right
@@ -19,29 +19,20 @@ layout:
   paper_bgcolor: white
   plot_bgcolor: white
 
-  # Options: "stack" | "relative" | "group" | "overlay"
-  barmode: group
-
-  # gap between bars of adjacent location coordinates.
-  bargap: 0.15 
-
-  # gap between bars of the same location coordinate.
-  bargroupgap: 0.1 
-
   #-------------------------------------------------------------------------------
   #   Legend
   #-------------------------------------------------------------------------------
 
-  showlegend: True
+  showlegend: False
   legend:
     borderwidth: 1
 
     # Options: "right" | "left"
-    xanchor: right
-    x: 0.99
+    xanchor: left
+    x: 0.01
     # Options: "top" | "bottom"
-    yanchor: bottom
-    y: 0.01
+    yanchor: top
+    y: 0.99
 
     font:
       family: "Old Standard TT, serif"
@@ -118,36 +109,36 @@ layout:
 
 traces:
   default:
-    opacity: 1.0
-    marker:
-      line:
-        width: 1
-        color: "#1f1f1f"
-
-    # Options: "inside" | "outside" | "auto" | "none"
-    textposition: outside
-
-    textfont:
-      family: "Old Standard TT, serif"
+    opacity: 0.8
+    line:
       color: black
-      # size: 12
+    showlegend: False
 
   0:
     marker:
       color: "#19d3f3"
+    fillcolor: "#19d3f3"
 
   1:
     marker:
       color: "#ef553b"
+    fillcolor: "#ef553b"
+
 
   2:
     marker:
       color: "#00cc96"
+    fillcolor: "#00cc96"
+
 
   3:
     marker:
       color: "#ab63fa"
+    fillcolor: "#ab63fa"
+
 
   4:
     marker:
       color: "#ffa15a"
+    fillcolor: "#ffa15a"
+
