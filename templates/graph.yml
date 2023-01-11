@@ -1,0 +1,75 @@
+#===============================================================================
+#   Layout
+#===============================================================================
+
+layout:
+  width: 400
+  height: 400
+  paper_bgcolor: rgba(255, 255, 255, 255)  # white (cannot be nested)
+  plot_bgcolor: rgba(0, 0, 0, 0)  # transparent (cannot be nested)
+  autosize: False
+  title:
+    font:
+      size:  16
+  showlegend: False
+  hovermode: closest
+  margin:
+    l: 0  # left
+    r: 0  # right
+    b: 5  # bottom
+    t: 20  # top
+    pad: 0
+
+
+#-------------------------------------------------------------------------------
+#   Nodes
+#-------------------------------------------------------------------------------
+
+node:
+  mode: "markers+text"  # show label -> "markers+text"; hide label -> "markers"
+  hoverinfo: "text"
+  marker:
+    opacity: 1.0
+    color: "#fcfcfc"  # node color
+    size: 20
+    line:
+      width: 2  # node border width
+      color: "#333333"  # node border color
+
+    showscale: False
+    colorscale: "YlGnBu"
+    reversescale: False
+
+    colorbar:
+      thickness: 15
+      title: ""
+      xanchor: left
+      titleside: right
+
+  textfont:
+    color: black
+    family: "Arial"
+    size: 14
+  textposition: "middle center"
+
+#-------------------------------------------------------------------------------
+#   Edges
+#-------------------------------------------------------------------------------
+
+edge:
+  opacity: 0.8
+  width: 2
+  color: "#808080"
+
+  arrow:
+    show: False
+    shape: 1
+    size: 2
+    head_offset: 0.13
+    tail_offset: 0.11
+
+  textfont:
+    color: black
+    family: "Arial"
+    size: 12
+  textoffset: "cw(15)"  # cw: clockwise, ccw: counter-clockwise

@@ -41,8 +41,9 @@ class PlotlyFigure:
         template: Union[str, int, float] = None,
         row: int = None,
         col: int = None,
+        **params,
     ) -> go.Figure:
-        return self.__add_trace(go.Scatter, template, row, col, x=x, y=y, name=name, text=text)
+        return self.__add_trace(go.Scatter, template, row, col, x=x, y=y, name=name, text=text, **params)
 
     def add_bar(
         self,
@@ -53,8 +54,9 @@ class PlotlyFigure:
         template: Union[str, int, float] = None,
         row: int = None,
         col: int = None,
+        **params,
     ) -> go.Figure:
-        return self.__add_trace(go.Bar, template, row, col, x=x, y=y, name=name, text=text)
+        return self.__add_trace(go.Bar, template, row, col, x=x, y=y, name=name, text=text, **params)
 
     def add_box(
         self,
@@ -65,8 +67,9 @@ class PlotlyFigure:
         template: Union[str, int, float] = None,
         row: int = None,
         col: int = None,
+        **params,
     ) -> go.Figure:
-        return self.__add_trace(go.Box, template, row, col, x=x, y=y, name=name, text=text)
+        return self.__add_trace(go.Box, template, row, col, x=x, y=y, name=name, text=text, **params)
 
     def add_violin(
         self,
@@ -77,8 +80,9 @@ class PlotlyFigure:
         template: Union[str, int, float] = None,
         row: int = None,
         col: int = None,
+        **params,
     ) -> go.Figure:
-        return self.__add_trace(go.Violin, template, row, col, x=x, y=y, name=name, text=text)
+        return self.__add_trace(go.Violin, template, row, col, x=x, y=y, name=name, text=text, **params)
 
     def __add_trace(
         self,
