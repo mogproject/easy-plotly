@@ -77,9 +77,9 @@ class PlotlyGraph:
                 self.conf = yaml.safe_load(f)
 
         self.G = G
-        self.nodes = sorted(G.nodes())
-        self.edges = sorted(G.edges())
-        self.node_id = {v: i for i, v in enumerate(self.nodes)}
+
+        self.nodes = G.nodes()
+        self.edges = G.edges()
 
         self.conf['layout']['title']['text'] = title
 
