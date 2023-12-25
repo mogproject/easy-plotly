@@ -21,3 +21,12 @@ Installation
 +-------------------------+---------------------------------------+
 | Launch Jupyter Lab      |``make lab``                           |
 +-------------------------+---------------------------------------+
+
+--------
+Examples
+--------
+
+* `Plots and charts <https://github.com/mogproject/easy-plotly/blob/main/notebooks/01_Examples.ipynb>`_
+* `Graphs <https://github.com/mogproject/easy-plotly/blob/main/notebooks/02_Graphs.ipynb>`_
+
+Templates are available `here <https://github.com/mogproject/easy-plotly/tree/main/templates>`_.
