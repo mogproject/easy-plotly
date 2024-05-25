@@ -2,11 +2,12 @@ import copy
 from typing import List, Mapping, Union, Any
 import yaml
 import plotly.graph_objects as go
+import plotly.subplots
 from IPython.display import display, Image, SVG
 
 
 class PlotlyFigure:
-    def __init__(self, config_path: str = None, title: str = None, x_title: str = None, y_title: str = None) -> None:
+    def __init__(self, config_path: str = None, title: str = None, x_title: str = None, y_title: str = None, rows: int = 1, cols: int = 1, **subplots_options) -> None:
         if config_path is None:
             self.conf = {
                 'layout': {
@@ -19,7 +20,13 @@ class PlotlyFigure:
                 self.conf = yaml.safe_load(f)
 
         # create figure
-        self.fig = go.Figure()
+        if rows == 1 and cols == 1:
+            self.fig = go.Figure()
+        else:
+            self.fig = plotly.subplots.make_subplots(rows=rows, cols=cols, **subplots_options)
+            if 'subplot_title' in self.conf['layout']:
+                self.fig.update_annotations(**self.conf['layout']['subplot_title'])
+                del self.conf['layout']['subplot_title']
 
         # overwrite titles
         if title is not None:
