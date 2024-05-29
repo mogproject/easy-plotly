@@ -3,9 +3,12 @@
 #===============================================================================
 
 layout:
+  font:  # global font settings
+    family: "Old Standard TT, serif"
+    color: black
   title:
     xanchor: center
-    x: 0.5
+    x: 0.5  # center the title
     font:
       family: "Old Standard TT, serif"
       size: 32
@@ -38,9 +41,7 @@ layout:
     y: 0.99
 
     font:
-      family: "Old Standard TT, serif"
       size: 18
-      color: black
 
   #-------------------------------------------------------------------------------
   #   X-axis
@@ -51,14 +52,10 @@ layout:
       text: X_TITLE
 
     titlefont:
-      family: "Old Standard TT, serif"
       size: 24
-      color: black
 
     tickfont:
-      family: "Old Standard TT, serif"
       size: 18
-      color: black
 
     # Sets the axis type. Options: "-" | "linear" | "log" | "date" | "category" | "multicategory"
     type: "log"
@@ -83,14 +80,10 @@ layout:
       text: Y_TITLE
 
     titlefont:
-      family: "Old Standard TT, serif"
       size: 24
-      color: black
 
     tickfont:
-      family: "Old Standard TT, serif"
       size: 18
-      color: black
 
     # Sets the axis type. Options: "-" | "linear" | "log" | "date" | "category" | "multicategory"
     type: "log"

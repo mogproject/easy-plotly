@@ -3,13 +3,14 @@
 #===============================================================================
 
 layout:
+  font:  # global font settings
+    family: "Old Standard TT, serif"
+    color: black
   title:
     xanchor: center
-    x: 0.5
+    x: 0.5  # center the title
     font:
-      family: "Old Standard TT, serif"
       size: 32
-      color: black
   width: 600
   height: 600
   margin:
@@ -38,9 +39,7 @@ layout:
     y: 0.99
 
     font:
-      family: "Old Standard TT, serif"
       size: 18
-      color: black
 
   #-------------------------------------------------------------------------------
   #   X-axis
@@ -51,14 +50,10 @@ layout:
       text: X_TITLE
 
     titlefont:
-      family: "Old Standard TT, serif"
       size: 24
-      color: black
 
     tickfont:
-      family: "Old Standard TT, serif"
       size: 18
-      color: black
 
     # Sets the axis type. Options: "-" | "linear" | "log" | "date" | "category" | "multicategory"
     type: "log"
@@ -73,6 +68,10 @@ layout:
     zerolinewidth: 2
     linecolor: "#636363"
     linewidth: 2
+    # dtick: 1
+    # tickformat: ',.0%'
+    # range: [0,1]
+    # rangemode: tozero
 
   #-------------------------------------------------------------------------------
   #   Y-axis
@@ -83,14 +82,10 @@ layout:
       text: Y_TITLE
 
     titlefont:
-      family: "Old Standard TT, serif"
       size: 24
-      color: black
 
     tickfont:
-      family: "Old Standard TT, serif"
       size: 18
-      color: black
 
     # Sets the axis type. Options: "-" | "linear" | "log" | "date" | "category" | "multicategory"
     type: "log"
@@ -105,6 +100,10 @@ layout:
     zerolinewidth: 2
     linecolor: "#636363"
     linewidth: 2
+    # dtick: 1
+    # tickformat: ',.0%'
+    # range: [0,1]
+    # rangemode: tozero
 
 #===============================================================================
 #   Trace Options
