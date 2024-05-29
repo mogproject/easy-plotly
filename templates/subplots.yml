@@ -27,9 +27,7 @@ layout:
 
   subplot_title:
     font:
-      family: "Old Standard TT, serif"
       size: 24
-      color: black
 
   #-------------------------------------------------------------------------------
   #   Legend
